@@ -1,0 +1,32 @@
+{
+  "name": "lernabuild",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "lerna run serve --parallel",
+    "build": "lerna run build --parallel",
+    "update:modules": "rm -rf node_modules && npm i",
+    "update": "npm run update:modules && lerna run update:modules --parallel"
+  },
+  "devDependencies": {
+    "@testing-library/user-event": "^9.0.0",
+    "@types/node": "^13.13.5",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "lerna": "^3.20.2",
+    "node-sass": "^4.14.1",
+    "typescript": "~3.7.2"
+  },
+  "workspaces": {
+    "packages": [
+      "project/*"
+    ]
+  },
+  "dependencies": {
+    "i": "^0.3.7",
+    "npm": "^8.7.0"
+  }
+}
