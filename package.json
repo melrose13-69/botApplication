@@ -14,19 +14,16 @@
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "eslint": "^8.14.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "lerna": "^3.20.2",
     "node-sass": "^4.14.1",
-    "typescript": "~3.7.2"
+    "typescript": "^4.6.3"
   },
   "workspaces": {
     "packages": [
       "project/*"
     ]
-  },
-  "dependencies": {
-    "i": "^0.3.7",
-    "npm": "^8.7.0"
   }
 }

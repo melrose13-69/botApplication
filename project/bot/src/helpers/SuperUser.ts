@@ -33,7 +33,6 @@ export class SuperUser extends Client {
   }
 
   async handleEvents (eventsFiles: string[], path: string): Promise<void> {
-    console.log(eventsFiles)
     for (const file of eventsFiles) {
       const event = (await import(join(_dirname, `${path}/${file}`))).default
 
@@ -78,7 +77,6 @@ export class SuperUser extends Client {
     await (async (): Promise<void> => {
       try {
         console.log('Command (guild) started')
-        console.log(this.commandArray)
 
         await rest.put(
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment

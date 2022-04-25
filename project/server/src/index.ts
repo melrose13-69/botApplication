@@ -11,7 +11,7 @@ const MONGO_URL = process.env.MONGO_DB_URI || ''
 const app = express()
 
 app.use(cors())
-app.use('/api/user', userRouter)
+app.use('/api/userMessages', userRouter)
 ;(async (): Promise<void> => {
   try {
     await mongoose.connect(MONGO_URL)
@@ -20,7 +20,7 @@ app.use('/api/user', userRouter)
       console.log(`Server is running on port ${PORT}.`)
     })
   } catch (e) {
-    // console.log('ServerError', e)
+    console.log('ServerError', e)
     process.exit()
   }
 })()

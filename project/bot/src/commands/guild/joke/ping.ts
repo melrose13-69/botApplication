@@ -6,7 +6,7 @@ export default {
   data: new SlashCommandBuilder()
     .setName('ping')
     .setDescription('Chech your ping'),
-  async execute (interaction: CommandInteraction): Promise<void> {
+  async execute (interaction: CommandInteraction, ...asd: any[]): Promise<void> {
     const { ping } = interaction.client.ws
     const title = `Hello ${interaction.user.username.split(' ')[0]}`
     const description = `Your ping ${ping}ms \n ${ping > 220 ? 'LOOOSER :(' : 'OOOOH, NICE !'}`

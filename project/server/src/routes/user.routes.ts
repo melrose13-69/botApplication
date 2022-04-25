@@ -1,7 +1,7 @@
 import bodyParser from 'body-parser'
 import { Request, Response, Router } from 'express'
 
-import User from '../models/User'
+import UserMessages from '../models/UserMessages'
 
 const router = Router()
 
@@ -11,23 +11,27 @@ router.post('/add', jsonParser, async (req: Request, res: Response ) => {
   try {
     const { name, discordId, time, message } = req.body
 
-    const user = await User.findOne({ discordId })
+    console.log(1)
+    const user = await UserMessages.findOne({ discordId })
 
+    console.log(2)
     if (user) {
-      res.status(200).json({ message: 'user edited' })
-
-      user.time = new Date()
-      return res.status(201).json({ message: 'user added' })
+      console.log(3)
+      user.time = 1
+      return res.status(201).json({ message: 'user added', status: 201 })
     }
+    console.log(4)
+    const newUser = new UserMessages({ name, discordId, time, message })
 
-    const newUser = new User({ name, discordId, time, message })
-
+    console.log(5)
     await newUser.save()
-
+    console.log(6)
+    console.log('user added')
     return res.status(201).json({ message: 'user added' })
 
   } catch (e) {
-    res.status(500).json({ message: `error add${  e}` })
+    console.log('ERROR:/add', e)
+    return res.status(500).json({ message: `error add${  e}` })
   }
 })
 //
