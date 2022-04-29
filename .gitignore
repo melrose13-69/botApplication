@@ -6,3 +6,5 @@ project/**/.env
 # build
 dist
 project/**/dist
+# IDE
+.idea
