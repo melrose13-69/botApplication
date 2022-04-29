@@ -1,0 +1,16 @@
+name: test name
+env:
+  CLIENT_ID: "951930187434586183"
+on:
+  pull_request:
+    branches:
+      - dev
+jobs:
+  test_job:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test step
+        run: touch .env
+
