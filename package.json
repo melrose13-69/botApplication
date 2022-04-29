@@ -3,7 +3,9 @@
   "private": true,
   "license": "MIT",
   "version": "1.0.0",
-  "workspaces": ["project/*"],
+  "workspaces": [
+    "project/*"
+  ],
   "scripts": {
     "dev:workspaces": "lerna run dev --parallel",
     "dev:bot": "lerna run dev --scope={server,bot}",
