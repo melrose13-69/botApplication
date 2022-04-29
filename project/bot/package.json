@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "build": "tsc --project ./",
-    "serve": "nodemon src/bot.ts",
+    "dev": "nodemon src/bot.ts",
     "start:prod": "node dist/index.js",
     "update:modules": "rm -rf node_modules && npm i"
   },

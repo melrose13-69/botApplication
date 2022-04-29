@@ -1,0 +1,9 @@
+- name: Create env file
+  run: |
+    touch .env
+    echo CLIENT_ID=${CLIENT_ID} > .env
+    echo CLIENT_TOKEN=${CLIENT_TOKEN} > .env
+    cat .env
+  env:
+    POSTGRES_USER: ${{ secrets.CLIENT_ID }}
+    POSTGRES_PASSWORD: ${{ secrets.CLIENT_TOKEN }}

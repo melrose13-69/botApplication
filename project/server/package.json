@@ -1,13 +1,11 @@
 {
-  "name": "@monorepo/server",
+  "name": "server",
   "version": "1.0.0",
   "private": true,
   "description": "",
   "scripts": {
     "build": "tsc --project ./",
-    "serve": "nodemon src/index.ts",
-    "dev:front": "concurrently \"npm run serve\" \"cd ../frontend && npm run serve\"",
-    "dev:bot": "concurrently \"cd ../bot && npm run serve\" \"npm run serve\"",
+    "dev": "nodemon src/index.ts",
     "start:prod": "node dist/src/index.js",
     "update:modules": "rm -rf node_modules && npm i"
   },

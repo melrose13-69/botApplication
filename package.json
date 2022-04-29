@@ -2,11 +2,16 @@
   "name": "lernabuild",
   "private": true,
   "license": "MIT",
+  "version": "1.0.0",
+  "workspaces": ["project/*"],
   "scripts": {
-    "start": "lerna run serve --parallel",
-    "build": "lerna run build --parallel",
-    "update:modules": "rm -rf node_modules && npm i",
-    "update": "npm run update:modules && lerna run update:modules --parallel"
+    "dev:workspaces": "lerna run dev --parallel",
+    "dev:bot": "lerna run dev --scope={server,bot}",
+    "dev:frontend": "lerna run dev --scope={server,frontend}",
+    "build:workspaces": "lerna run build --parallel",
+    "build:bot": "lerna run build --scope={server,bot}",
+    "build:frontend": "lerna run build --scope={server,frontend}",
+    "update:modules": "lerna bootstrap"
   },
   "devDependencies": {
     "@testing-library/user-event": "^9.0.0",
@@ -20,10 +25,5 @@
     "lerna": "^3.20.2",
     "node-sass": "^4.14.1",
     "typescript": "^4.6.3"
-  },
-  "workspaces": {
-    "packages": [
-      "project/*"
-    ]
   }
 }
